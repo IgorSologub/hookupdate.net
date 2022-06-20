@@ -34,7 +34,7 @@ public class ContactUsTest extends BaseTest {
             basePage.waitOneSeconds();
             if (basePage.checkTitles(HEADER_TITLES)) { goodTitlesCount++; }
             else { basePage.outputWrongTitle(); }
-            basePage.back(LOCAL_HOOKUP_URL);
+            basePage.back(CONTACT_US_PAGE_URL);
         }
         assertEquals(NUMBER_OF_GOOD_HEADER_BUTTONS, goodTitlesCount);
     }
@@ -49,7 +49,7 @@ public class ContactUsTest extends BaseTest {
             basePage.waitOneSeconds();
             if (basePage.checkTitles(FOOTER_TITLES)) { goodTitlesCount++; }
             else { basePage.outputWrongTitle(); }
-            basePage.back(LOCAL_HOOKUP_URL);
+            basePage.back(CONTACT_US_PAGE_URL);
         }
         assertEquals(NUMBER_OF_GOOD_FOOTER_BUTTONS, goodTitlesCount);
     }

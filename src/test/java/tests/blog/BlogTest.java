@@ -102,9 +102,10 @@ public class BlogTest extends BaseTest {
     public void successfulCommentFormTest () {
         blogPage.enterName(NAME)
                 .enterEmail(EMAIL)
-                .enterComment(COMMENT)
-                .submitButtonClick();
+                .enterComment(COMMENT);
         basePage.waitOneSeconds();
+        blogPage.submitButtonClick();
+        basePage.waitFiveSeconds();
         assertTrue(blogPage.submitMessageVisibleCheck());
     }
 
@@ -112,8 +113,9 @@ public class BlogTest extends BaseTest {
     public void unsuccessfulCommentFormTest () {
         blogPage.enterName(EMPTY)
                 .enterEmail(EMPTY)
-                .enterComment(EMPTY)
-                .submitButtonClick();
+                .enterComment(EMPTY);
+        basePage.waitOneSeconds();
+        blogPage.submitButtonClick();
         basePage.waitFiveSeconds();
         assertTrue(mainPage.inputErrorVisibleCheck());
     }
