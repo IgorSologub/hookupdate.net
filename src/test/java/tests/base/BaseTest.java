@@ -38,7 +38,7 @@ public class BaseTest {
                 driver = CommonActions.createDriver("CHROME", 360, 640);
                 break;
             case "review" :
-                driver = CommonActions.createDriver("CHROME>", 640, 360);
+                driver = CommonActions.createDriver("CHROME", 640, 360);
                 break;
             case "escort" :
                 driver = CommonActions.createDriver("CHROME", 768, 1024);
