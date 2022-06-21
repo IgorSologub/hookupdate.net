@@ -23,10 +23,10 @@ public class MainPage extends BasePage {
     private final By submitButton = By.xpath("//button[@class='w35VPf']");
     private final By submitMessage = By.xpath("//div[@id='form-message']");
     private final By nextHookupSliderButton = By.xpath("//button[@class='js-hookup-slider-next slick-next slick-arrow']");
-    private final By hookupSlide = By.xpath("(//div[@class='lx1WJ'])[9]");
+    private final By hookupSlide = By.xpath("(//div[@class='lx1WJ'])[5]");
     private final By scrollToHookupSlider = By.xpath("(//h2[@class='Eq-ne80JVI-'])[2]");
     private final By nextBlogSliderButton = By.xpath("//button[@class='js-articles-next-lg slick-next slick-arrow']");
-    private final By blogSlide = By.xpath("(//div[@class='I41BD1 J6dXEGSrx0H'])[7]");
+    private final By blogSlide = By.xpath("(//div[@class='I41BD1 J6dXEGSrx0H'])[5]");
     private final By scrollToBlogSlider = By.xpath("(//h2[@class='Eq-ne80JVI-'])[14]");
 
     public MainPage moveToChangeLanguageButton () {

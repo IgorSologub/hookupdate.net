@@ -112,9 +112,12 @@ public class ReviewTest extends BaseTest {
     public void successfulCommentFormTest () {
         reviewPage.enterName(NAME)
                 .enterEmail(EMAIL)
-                .enterComment(COMMENT)
-                .submitButtonClick();
+                .enterComment(COMMENT);
         basePage.waitOneSeconds();
+        reviewPage.scrollToSubmitButton();
+        basePage.waitOneSeconds();
+        reviewPage.submitButtonClick();
+        basePage.waitFiveSeconds();
         assertTrue(reviewPage.submitMessageVisibleCheck());
     }
 
@@ -122,8 +125,11 @@ public class ReviewTest extends BaseTest {
     public void unsuccessfulCommentFormTest () {
         reviewPage.enterName(EMPTY)
                 .enterEmail(EMPTY)
-                .enterComment(EMPTY)
-                .submitButtonClick();
+                .enterComment(EMPTY);
+        basePage.waitOneSeconds();
+        reviewPage.scrollToSubmitButton();
+        basePage.waitOneSeconds();
+        reviewPage.submitButtonClick();
         basePage.waitFiveSeconds();
         assertTrue(mainPage.inputErrorVisibleCheck());
     }

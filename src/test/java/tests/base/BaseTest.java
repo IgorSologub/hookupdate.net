@@ -32,7 +32,7 @@ public class BaseTest {
         switch (browser) {
             case "main" :
             case "findHookup" :
-                driver = CommonActions.createDriver("CHROME", 1920, 1080);
+                driver = CommonActions.createDriver("CHROME", 1024, 1366);
                 break;
             case "reviewCategory" :
                 driver = CommonActions.createDriver("CHROME", 360, 640);
@@ -50,7 +50,7 @@ public class BaseTest {
                 driver = CommonActions.createDriver("CHROME", 1024, 1366);
                 break;
             case "sugarDaddies" :
-                driver = CommonActions.createDriver("CHROME", 1366, 1024);
+                driver = CommonActions.createDriver("CHROME", 1024, 768);
                 break;
             case "hookupApps" :
                 driver = CommonActions.createDriver("CHROME", 375, 667);

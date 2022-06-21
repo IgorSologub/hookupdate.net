@@ -64,7 +64,7 @@ public class SugarDaddiesTest extends BaseTest {
     @Test
     public void visitSiteRegButtonTest () {
         int goodTitlesCount = 0;
-        for (int i = 1; i <= NUMBER_OF_VISIT_SITE_REG_BUTTONS_SUGAR_DADDIES_PAGE; i++) {
+        for (int i = 4; i <= 6; i++) {
             basePage.waitOneSeconds();
             sugarDaddiesPage.visitSiteRegButtonClick(i);
             basePage.nextTab();
@@ -153,7 +153,7 @@ public class SugarDaddiesTest extends BaseTest {
     @Test
     public void readReviewButtonTest () {
         int goodTitlesCount = 0;
-        for (int i = 1; i <= NUMBER_OF_READ_REVIEW_SUGAR_DADDIES_PAGE; i++) {
+        for (int i = 4; i <= 6; i++) {
             basePage.waitOneSeconds();
             sugarDaddiesPage.readReviewButtonClick(i);
             basePage.waitOneSeconds();

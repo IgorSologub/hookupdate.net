@@ -73,7 +73,7 @@ public class Constant {
         public static final int NUMBER_OF_DOWNLOAD_APP_REG_BUTTONS = 5;
         public static final int NUMBER_OF_VISIT_SITE_REG_BUTTONS = 24;
         public static final int NUMBER_OF_PICTURE_REG_BUTTONS = 3;
-        public static final int NUMBER_OF_VISIT_SITE_REG_BUTTONS_SUGAR_DADDIES_PAGE = 4;
+        public static final int NUMBER_OF_VISIT_SITE_REG_BUTTONS_SUGAR_DADDIES_PAGE = 3;
         public static final int NUMBER_OF_VISIT_SITE_REG_BUTTONS_IN_TOP_SITES_FOR_SUGAR_DATING_SUGAR_DADDIES_PAGE = 5;
         public static final int NUMBER_OF_SEND_MESSAGE_REG_BUTTONS_SUGAR_DADDIES_PAGE = 6;
         public static final int NUMBER_OF_VISIT_SITE_REG_BUTTONS_LOCAL_HOOKUP_PAGE = 5;
@@ -130,7 +130,7 @@ public class Constant {
         public static final int NUMBER_OF_TOP_POST_BLOG_BUTTONS_BLOG_PAGE = 4;
         public static final int NUMBER_OF_TOP_POST_BUTTONS_BLOG_PAGE = 4;
         public static final int NUMBER_OF_FIND_SUGAR_CITIES_SUGAR_DADDIES_PAGE = 14;
-        public static final int NUMBER_OF_READ_REVIEW_SUGAR_DADDIES_PAGE = 4;
+        public static final int NUMBER_OF_READ_REVIEW_SUGAR_DADDIES_PAGE = 3;
         public static final int NUMBER_OF_READ_FULL_REVIEW_SUGAR_DADDIES_PAGE = 5;
         public static final int NUMBER_OF_READ_FULL_REVIEW_LOCAL_HOOKUP_PAGE = 5;
         public static final int NUMBER_OF_ARTICLES_LOCAL_HOOKUP_PAGE = 20;

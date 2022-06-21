@@ -24,6 +24,7 @@ public class ReviewPage extends BasePage {
     private final By nextSliderButton = By.xpath("//button[@class='js-sites-next-sm slick-arrow slick-next']");
     private final By sliderBlock = By.xpath("(//div[@class='bkFJFRr0Fw1P'])[4]");
     private final By scrollToSlider = By.xpath("(//h2[@class='Eq-ne80JVI-'])[16]");
+    private final By scrollToSubmitButton = By.xpath("//div[@id='customer-reviews-nav-4355']");
 
     public ReviewPage visitSiteRegButtonClick () {
         driver.findElement(visitSiteRegButton).click();
@@ -67,6 +68,11 @@ public class ReviewPage extends BasePage {
 
     public ReviewPage enterComment (String comment) {
         driver.findElement(commentIInput).sendKeys(comment);
+        return this;
+    }
+
+    public ReviewPage scrollToSubmitButton () {
+        scrollToElement(scrollToSubmitButton);
         return this;
     }
 

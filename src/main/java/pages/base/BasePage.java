@@ -25,6 +25,8 @@ public class BasePage {
     private final By closePopupsButton = By.xpath("//span[@id='lp-confirm-close']");
     private final By mainLogoButton = By.xpath("//a[@class='j_dEjyKIA9q']");
     private final By headerMenuOpen = By.xpath("//button[@class='RzqhfOA1_9 js-modal-btn']");
+    private final By languageMenuOpen = By.xpath("(//a[@class='ZmyniJn A1Oupc57o js-header-drop-btn '])[4]");
+    private final By checkLanguageMenuVisible = By.xpath("(//span[@class='wpml-ls-native'])[3]");
 
     /**
      * ///////////// Common methods /////////////
@@ -217,10 +219,17 @@ public class BasePage {
         return this;
     }
 
-    public BasePage headerMenuOpen() {
+    public BasePage headerMenuOpen () {
         By headerButton = By.xpath("(//a[@class='ZmyniJn '])[2]");
         if (!elementVisibleCheck(headerButton)) {
             driver.findElement(headerMenuOpen).click();
+        }
+        return this;
+    }
+
+    public BasePage languageMenuOpen () {
+        if(!elementVisibleCheck(checkLanguageMenuVisible)) {
+            driver.findElement(languageMenuOpen).click();
         }
         return this;
     }

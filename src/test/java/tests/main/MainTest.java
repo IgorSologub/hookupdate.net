@@ -29,6 +29,7 @@ public class MainTest extends BaseTest {
     public void headerButtonsTest () {
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
+            basePage.headerMenuOpen();
             basePage.waitOneSeconds();
             basePage.headerButtonClick(i);
             basePage.waitOneSeconds();
@@ -66,7 +67,9 @@ public class MainTest extends BaseTest {
         int goodUrlsCount = 0;
         for (int i = 2; i <= MAX_AMOUNT_LANGUAGE_CHANGE_BUTTONS + 1; i++) {
             basePage.waitOneSeconds();
-            mainPage.moveToChangeLanguageButton();
+            basePage.headerMenuOpen();
+            basePage.waitOneSeconds();
+            basePage.languageMenuOpen();
             basePage.waitOneSeconds();
             mainPage.changeLanguageButtonClick(i);
             if (basePage.checkUrls(LANGUAGE_URLS)) { goodUrlsCount++; }
@@ -156,26 +159,6 @@ public class MainTest extends BaseTest {
             if (mainPage.faqTextVisibleCheck(i)) { visibleTextCount++; }
         }
         assertEquals(NUMBER_OF_FAQ_COLLAPSE_BUTTONS, visibleTextCount);
-    }
-
-    @Test
-    public void successfulCommentFormTest () {
-        mainPage.enterName(NAME)
-                .enterEmail(EMAIL)
-                .enterComment(COMMENT)
-                .submitButtonClick();
-        basePage.waitOneSeconds();
-        assertTrue(mainPage.submitMessageVisibleCheck());
-    }
-
-    @Test
-    public void unsuccessfulCommentFormTest () {
-        mainPage.enterName(EMPTY)
-                .enterEmail(EMPTY)
-                .enterComment(EMPTY)
-                .submitButtonClick();
-        basePage.waitFiveSeconds();
-        assertTrue(mainPage.inputErrorVisibleCheck());
     }
 
     @Test
