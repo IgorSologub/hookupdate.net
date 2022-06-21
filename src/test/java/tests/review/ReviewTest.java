@@ -114,8 +114,6 @@ public class ReviewTest extends BaseTest {
                 .enterEmail(EMAIL)
                 .enterComment(COMMENT);
         basePage.waitOneSeconds();
-        reviewPage.scrollToSubmitButton();
-        basePage.waitOneSeconds();
         reviewPage.submitButtonClick();
         basePage.waitFiveSeconds();
         assertTrue(reviewPage.submitMessageVisibleCheck());
@@ -126,8 +124,6 @@ public class ReviewTest extends BaseTest {
         reviewPage.enterName(EMPTY)
                 .enterEmail(EMPTY)
                 .enterComment(EMPTY);
-        basePage.waitOneSeconds();
-        reviewPage.scrollToSubmitButton();
         basePage.waitOneSeconds();
         reviewPage.submitButtonClick();
         basePage.waitFiveSeconds();
