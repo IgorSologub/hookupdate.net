@@ -96,7 +96,9 @@ public class Constant {
                 "Hookup",
                 "Erotic",
                 "Sugar",
-                "Men"
+                "Men",
+                "BDSM",
+                "hookups"
         );
         public static final List<String> AUTHORS_TITLES = Arrays.asList(
                 "Samantha",
