@@ -68,7 +68,8 @@ public class Constant {
                 "OneNightFriend",
                 "flirtyamateurs.com",
                 "Flirtymature",
-                "Together2Night"
+                "Together2Night",
+                "localcrush.co.uk"
         );
         public static final int NUMBER_OF_DOWNLOAD_APP_REG_BUTTONS = 5;
         public static final int NUMBER_OF_VISIT_SITE_REG_BUTTONS = 24;
