@@ -86,6 +86,7 @@ public class ReviewTest extends BaseTest {
         assertEquals(NUMBER_OF_PICTURE_REG_BUTTONS, goodTitlesCount);
     }
 
+    /*
     @Test
     public void typesOfRelationshipsButtonTest () {
         int goodTitlesCount = 0;
@@ -99,6 +100,8 @@ public class ReviewTest extends BaseTest {
         }
         assertEquals(NUMBER_OF_TYPES_OF_RELATIONSHIPS_BUTTONS_REVIEW_PAGE, goodTitlesCount);
     }
+
+     */
 
     @Test
     public void startButtonTest () {
