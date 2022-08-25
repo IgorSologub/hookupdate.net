@@ -1,10 +1,8 @@
 package pages.review;
 
-import net.bytebuddy.dynamic.scaffold.inline.RebaseDynamicTypeBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.base.BasePage;
-import pages.main.MainPage;
 
 import static constants.Constant.Urls.QUIZ_PAGE_URL;
 
@@ -86,7 +84,7 @@ public class ReviewPage extends BasePage {
         if (!isVisible) {
             waitOneSeconds();
             submitButtonClick();
-            waitFiveSeconds();
+            waitTwoSeconds();
             isVisible = driver.findElements(submitMessage).size() > 0;
         }
         return isVisible;
@@ -97,7 +95,7 @@ public class ReviewPage extends BasePage {
         if (!errorsCheck) {
             waitOneSeconds();
             submitButtonClick();
-            waitFiveSeconds();
+            waitTwoSeconds();
             errorsCheck = driver.findElements(submitMessage).size() == 3;
         }
         return errorsCheck;

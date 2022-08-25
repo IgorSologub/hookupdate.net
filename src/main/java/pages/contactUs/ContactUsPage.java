@@ -3,7 +3,6 @@ package pages.contactUs;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.base.BasePage;
-import pages.main.MainPage;
 
 public class ContactUsPage extends BasePage {
 
@@ -46,7 +45,7 @@ public class ContactUsPage extends BasePage {
         if (!isVisible) {
             waitOneSeconds();
             submitButtonClick();
-            waitFiveSeconds();
+            waitTwoSeconds();
             isVisible = driver.findElements(submitMessage).size() == 1;
         }
         return isVisible;
@@ -58,7 +57,7 @@ public class ContactUsPage extends BasePage {
         if (!errorsCheck) {
             waitOneSeconds();
             submitButtonClick();
-            waitFiveSeconds();
+            waitTwoSeconds();
             errorsCheck = driver.findElements(submitMessage).size() == 1;
         }
         return errorsCheck;

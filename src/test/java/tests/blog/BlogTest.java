@@ -1,33 +1,31 @@
 package tests.blog;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
 import static constants.Constant.CommentForm.*;
-import static constants.Constant.CommentForm.NUMBER_OF_ERROR_MESSAGE;
 import static constants.Constant.Footer.FOOTER_TITLES;
 import static constants.Constant.Footer.NUMBER_OF_GOOD_FOOTER_BUTTONS;
 import static constants.Constant.Header.HEADER_TITLES;
 import static constants.Constant.Header.NUMBER_OF_GOOD_HEADER_BUTTONS;
 import static constants.Constant.Reviews.*;
-import static constants.Constant.Reviews.NUMBER_OF_TOP_POST_BLOG_BUTTONS_BLOG_CATEGORY;
 import static constants.Constant.Urls.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class BlogTest extends BaseTest {
 
-    @BeforeEach
+    @BeforeMethod
     public void setUp () {
         startDriver("blog");
         basePage.goToUrl(BLOG_PAGE_URL);
         basePage.waitOneSeconds();
-        basePage.closePopup();
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void headerButtonsTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
             basePage.headerMenuOpen();
@@ -41,8 +39,9 @@ public class BlogTest extends BaseTest {
         assertEquals(NUMBER_OF_GOOD_HEADER_BUTTONS, goodTitlesCount);
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void footerButtonsTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_FOOTER_BUTTONS; i++) {
             if (i == 7) {i++; goodTitlesCount++;}
@@ -56,15 +55,17 @@ public class BlogTest extends BaseTest {
         assertEquals(NUMBER_OF_GOOD_FOOTER_BUTTONS, goodTitlesCount);
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void mainLogoLinkTest () {
+        basePage.closePopup();
         basePage.mainLogoButtonClick();
         basePage.waitOneSeconds();
         assertEquals(MAIN_PAGE_URL, basePage.getCurrentUrl());
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void topPostBlogButtonTest () {
+        basePage.closePopup();
         int goodUrlsCount = 0;
         for (int i = 1; i <= NUMBER_OF_TOP_POST_BLOG_BUTTONS_BLOG_PAGE; i++) {
             basePage.waitOneSeconds();
@@ -77,8 +78,9 @@ public class BlogTest extends BaseTest {
         assertEquals(NUMBER_OF_TOP_POST_BLOG_BUTTONS_BLOG_PAGE, goodUrlsCount);
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void topPostButtonTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_TOP_POST_BUTTONS_BLOG_PAGE; i++) {
             basePage.waitOneSeconds();
@@ -91,37 +93,41 @@ public class BlogTest extends BaseTest {
         assertEquals(NUMBER_OF_TOP_POST_BUTTONS_BLOG_PAGE, goodTitlesCount);
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void authorButtonTest () {
+        basePage.closePopup();
         blogPage.authorButtonClick();
-        blogPage.waitFiveSeconds();
+        blogPage.waitTwoSeconds();
         assertTrue(blogPage.authorUrlCheck());
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void successfulCommentFormTest () {
+        basePage.closePopup();
         blogPage.enterName(NAME)
                 .enterEmail(EMAIL)
                 .enterComment(COMMENT);
         basePage.waitOneSeconds();
         blogPage.submitButtonClick();
-        basePage.waitFiveSeconds();
+        basePage.waitTwoSeconds();
         assertTrue(blogPage.submitMessageVisibleCheck());
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void unsuccessfulCommentFormTest () {
+        basePage.closePopup();
         blogPage.enterName(EMPTY)
                 .enterEmail(EMPTY)
                 .enterComment(EMPTY);
         basePage.waitOneSeconds();
         blogPage.submitButtonClick();
-        basePage.waitFiveSeconds();
+        basePage.waitTwoSeconds();
         assertTrue(mainPage.inputErrorVisibleCheck());
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void nextSliderButtonTest () {
+        basePage.closePopup();
         blogPage.scrollToSlider();
         basePage.waitOneSeconds();
         blogPage.nextSliderButtonClick();

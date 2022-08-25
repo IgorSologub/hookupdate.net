@@ -1,7 +1,7 @@
 package tests.blogCategory;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
 import static constants.Constant.Footer.FOOTER_TITLES;
@@ -10,21 +10,21 @@ import static constants.Constant.Header.HEADER_TITLES;
 import static constants.Constant.Header.NUMBER_OF_GOOD_HEADER_BUTTONS;
 import static constants.Constant.Reviews.*;
 import static constants.Constant.Urls.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class BlogCategoryTest extends BaseTest {
 
-    @BeforeEach
+    @BeforeMethod
     public void setUp () {
         startDriver("reviewCategory");
         basePage.goToUrl(BLOG_CATEGORY_URL);
         basePage.waitOneSeconds();
-        basePage.closePopup();
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void headerButtonsTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
             basePage.headerMenuOpen();
@@ -38,8 +38,9 @@ public class BlogCategoryTest extends BaseTest {
         assertEquals(NUMBER_OF_GOOD_HEADER_BUTTONS, goodTitlesCount);
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void footerButtonsTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_FOOTER_BUTTONS; i++) {
             if (i == 7) {i++; goodTitlesCount++;}
@@ -53,15 +54,17 @@ public class BlogCategoryTest extends BaseTest {
         assertEquals(NUMBER_OF_GOOD_FOOTER_BUTTONS, goodTitlesCount);
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void mainLogoLinkTest () {
+        basePage.closePopup();
         basePage.mainLogoButtonClick();
         basePage.waitOneSeconds();
         assertEquals(MAIN_PAGE_URL, basePage.getCurrentUrl());
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void blogPostTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_BLOG_POST_BUTTONS_BLOG_CATEGORY; i++) {
             basePage.waitOneSeconds();
@@ -74,8 +77,9 @@ public class BlogCategoryTest extends BaseTest {
         assertEquals(NUMBER_OF_BLOG_POST_BUTTONS_BLOG_CATEGORY, goodTitlesCount);
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void topPostBlogButtonTest () {
+        basePage.closePopup();
         int goodUrlsCount = 0;
         for (int i = 1; i <= NUMBER_OF_TOP_POST_BLOG_BUTTONS_BLOG_CATEGORY; i++) {
             basePage.waitOneSeconds();
@@ -88,8 +92,9 @@ public class BlogCategoryTest extends BaseTest {
         assertEquals(NUMBER_OF_TOP_POST_BLOG_BUTTONS_BLOG_CATEGORY, goodUrlsCount);
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void topPostButtonTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_TOP_POST_BUTTONS_BLOG_CATEGORY; i++) {
             basePage.waitOneSeconds();
@@ -102,10 +107,11 @@ public class BlogCategoryTest extends BaseTest {
         assertEquals(NUMBER_OF_TOP_POST_BUTTONS_BLOG_CATEGORY, goodTitlesCount);
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void paginationTest () {
+        basePage.closePopup();
         blogCategoryPage.paginationButtonClick();
-        basePage.waitFiveSeconds();
+        basePage.waitTwoSeconds();
         assertTrue(blogCategoryPage.paginationUrlCheck());
     }
 

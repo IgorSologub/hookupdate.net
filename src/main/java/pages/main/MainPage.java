@@ -1,12 +1,8 @@
 package pages.main;
 
-import com.sun.tools.javac.Main;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.base.BasePage;
-
-import java.security.PublicKey;
 
 public class MainPage extends BasePage {
 
@@ -113,7 +109,7 @@ public class MainPage extends BasePage {
         if (!isVisible) {
             waitOneSeconds();
             submitButtonClick();
-            waitFiveSeconds();
+            waitTwoSeconds();
             isVisible = driver.findElements(submitMessage).size() > 0;
         }
         return isVisible;
@@ -125,7 +121,7 @@ public class MainPage extends BasePage {
         if (!errorsCheck) {
             waitOneSeconds();
             submitButtonClick();
-            waitFiveSeconds();
+            waitTwoSeconds();
             errorsCheck = driver.findElements(submitMessage).size() == 3;
         }
         return errorsCheck;
