@@ -89,7 +89,8 @@ public class Constant {
                 "BeSexcited",
                 "My Dirty Neighbour",
                 "Online Hookups",
-                "naughty-hub.com"
+                "naughty-hub.com",
+                "Dream Singles"
         );
         public static final int NUMBER_OF_DOWNLOAD_APP_REG_BUTTONS = 5;
         public static final int NUMBER_OF_VISIT_SITE_REG_BUTTONS = 24;
